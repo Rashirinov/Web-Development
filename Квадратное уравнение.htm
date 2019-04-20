@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Квадратное уравнение</title>
+	<style>
+		body {background-image: url("png/backpic.jpg"); background-position: center; height: 100vh; display: flex; justify-content: center;  align-items: center;}
+		input { height: 50px; width: 80px; font-size: 30px; text-align: center; margin: 10px;}
+		button {margin: 10px; height: 56px;}
+		#rezultat {border: 1px dashed red; min-height: 54px; min-width: 80px; padding: 5px;}
+	</style>
+</head>
+<body>
+    <input id="a" type="text" />x² + 
+	<input id="b" type="text" />x = 
+	<input id="c" type="text" />
+	
+    <p><button onclick="count()">Найти корни</button></p>
+	
+	<span id="rezultat"></span>
+	
+    <script>
+        function count() {
+          it = document.getElementById("a").value;
+          at = document.getElementById("b").value;
+          ot = document.getElementById("c").value;
+		  
+          d = Math.pow(at,2) + 4 * ot * it;
+		  
+		  if(d < 0) {
+			text = "Действительных корней нет";
+		  } else if (d == 0) {
+			x1 = -at  / (2 * it);
+			text = "x₁ = x₂ = " + x1; 
+		  } else {
+			d = Math.sqrt(d);
+			x1 = (-at + d) / (2 * it);
+			x2 = (-at - d) / (2 * it);
+			text = "x₁ = " + x1 + "<br />x₂ = " + x2;
+		  }
+		   
+          document.getElementById("rezultat").innerHTML = text;
+        }
+    </script>
+</body>
+</html>

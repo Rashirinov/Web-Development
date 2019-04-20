@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Карусель</title>
+		<style>
+			body {background-image: url("png/backpic.jpg"); background-position: center; height: 100vh; display: flex; justify-content: center;  align-items: center;}
+			#slider {
+				width: 800px;
+				height: 600px;
+				background: darkseagreen no-repeat center;
+				box-shadow: 1px 1px 20px black;
+				margin: 50px auto;
+				padding: 40px;
+				position: relative;
+			}
+			#slider div {
+				width: 50px;
+				height: 50px;
+				background: red;
+				border: 3px solid white;
+				border-radius: 50%;
+				box-shadow: 1px 1px 5px black;
+				position: absolute;
+				top: 300px; 
+				font-size: 50px;
+				color: white;
+				text-align: center;
+				line-height: 55px;
+				cursor: pointer;
+				user-select: none;
+			}
+			#slider div:hover {
+				color: red;
+				background: white;
+			}
+			#prev {
+				left: 10px;
+			}
+			#next {
+				right: 10px;
+			}
+			#pause {
+				top: 600px !important;
+				left: 400px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="slider">
+			<div id="prev" onclick="prev()">&#11164;</div>
+			<div id="next" onclick="next()">&#11166;</div>
+			<div id="pause" onclick="pause()"></div>
+		</div>
+		
+		<script>
+			var x = 0;
+			var click = 0;
+			pause();
+			show();
+			
+			function next() {
+				if(x < 9) x++; else x = 0;
+				show();
+			}
+			function prev() {
+				if(x > 0) x--; else x = 9;
+				show();
+			}
+			function pause() {
+				click = Math.abs(click - 1); 
+				if(click == 0) {
+					clearInterval(change);
+					code = "&#9654;";
+				} else {
+					change = setInterval(next, 3000);
+					code = "&#10073;&#10073;";
+				}
+				document.getElementById("pause").innerHTML = code;
+			}
+			function show() {
+				document.getElementById("slider").style.backgroundImage = "url('slider/" + x + ".jpg')";
+			}
+		</script>
+	</body>
+</html>

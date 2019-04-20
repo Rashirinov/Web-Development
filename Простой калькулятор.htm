@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Простой калькулятор</title>
+		<style>
+			input, button, span, select {width: 100px; padding: 20px; margin: 10px; font-size: 30px;}
+			#c {border: 1px dashed red; height: 36px;}
+			body {background-image: url("png/backpic.jpg"); background-position: center; height: 100vh; display: flex; justify-content: center;  align-items: center;}
+		</style>
+	</head>
+	<body>
+		<input id="a" type="text" />
+		<select id="op">
+			<option>+</option>
+			<option>-</option>
+			<option>*</option>
+			<option>/</option>
+		</select>
+		<input id="b" type="text" />
+		<button onclick="calc()"> = </button>
+		<span id="c"></span>
+		
+		<script>
+			function calc() {
+				a = document.getElementById("a").value;
+				b = document.getElementById("b").value;
+				op = document.getElementById("op").value;
+				
+				c = a + op + b;
+				
+				document.getElementById("c").innerHTML = eval(c);
+			}
+		</script>
+	</body>
+</html>

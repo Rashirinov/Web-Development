@@ -1,0 +1,58 @@
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Словесные часы</title>
+		<style>
+			body {background-image: url("png/backpic.jpg"); background-position: center; height: 100vh; display: flex; justify-content: center;  align-items: center;   flex-direction: column;}
+			input {height: 100px; font-size: 50px; text-align: center}
+		</style>
+	</head>
+	<body>
+		<input id="a" type="text" />
+		<!-- button onclick="todo()">Ok</button -->
+		<p id="da"></p>
+		
+		<script>
+			var word = [];
+			word[0] = ["десять","один","две","три","четыр",
+						"пят","шест","сем","восем","девят"];
+			word[1] = ["ноль","один","два","три","четыре","пять",
+						"шесть","семь","восемь","девять"];
+			word[2] = ["","десять","двадцать","тридцать","сорок","пятьдесят",
+						"шестьдесят","семьдесять","восемьдесять","девяносто"];
+			
+			setInterval(todo,1000);
+			
+			function todo() {
+				d =  new Date();
+				h = d.getHours();
+				m = d.getMinutes();
+				s = d.getSeconds();
+				
+				document.getElementById("a").value = h+":"+m+":"+s;
+				
+				hw = numtostr(h) + "часов";
+				mw = numtostr(m) + "минут";
+				sw = numtostr(s) + "секунд";
+				
+				document.getElementById("da").innerHTML = "Сейчас " + hw + ", " + mw + ", " + sw;
+			}
+			
+			function numtostr(a) {
+				text = "";	
+				len = a.toString().length;
+				
+				if (a>10 && a<20) text = word[0][a % 10]+ "надцать ";
+				else {
+					for(i=1; i<=len; i++) {
+						rest = a % 10;
+						if (rest != 0)	text = word[i][rest] + " " + text;
+						a = Math.floor(a / 10);
+					}
+				}
+				return text;
+			}
+			
+		</script>
+	</body>
+</html>

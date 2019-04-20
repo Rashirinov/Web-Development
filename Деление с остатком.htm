@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Деление с остатком</title>
+		<style>
+			input, button, span, select {width: 100px; padding: 10px; margin:10px; font-size:30px}
+			#c {border: 1px dashed red; min-height: 36px;}
+			body {background-image: url("png/backpic.jpg"); background-position: center; height: 100vh; display: flex; justify-content: center;  align-items: center;}
+		</style>
+	</head>
+	<body>
+		<input id="a" type="text" /> /
+		<input id="b" type="text" />
+		<button onclick="div()"> = </button>
+		<span id="c"></span>
+		
+		<script>
+			function div() {
+				a = document.getElementById("a").value;
+				b = document.getElementById("b").value;
+				
+				rem = a % b;
+				divis = (a - rem) / b;
+				
+				document.getElementById("c").innerHTML = 
+										divis + " в остатке " + rem;
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,68 @@
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Ход конем</title>
+		<style>
+			body {background-image: url("png/backpic.jpg"); background-position: center; height: 100vh; display: flex; justify-content: center;  align-items: center;}
+			
+			#stol,td {
+				border-collapse: collapse;
+				
+			}
+			#stol td {
+				height: 50px;
+				width: 50px;
+				text-align: center;
+				cursor: pointer;
+				font-size: 35px;
+			}
+			.red {
+				background: #b77014;
+			}
+			.yellow {
+				background: #f2b76a;
+			}
+			.ghost {
+				background: none;
+			}
+			
+		</style>		
+	</head>
+	<body>
+		<table id="stol"></table>
+		<script>
+			var x = 0;
+			var y;
+			var letter = ["","A","B","C","D","E","F","G","H"];
+			sahmat("B",1);
+			
+			function sahmat(herf,reqem) {
+				herfi = letter.indexOf(herf);
+				
+				kod = "";
+				for (j=0;j<=8;j++){
+					kod += "<tr>";
+					for (i=0;i<=8;i++) {
+						if(j==0 || i==0) x = "ghost";
+						else if ((i+j) %2 == 0) x = "red"; else x = "yellow";
+
+						if (j==0) y = letter[i];
+						else if (i==0) y = j;
+						else if (j==reqem && letter[i]==herf) y = "♞";
+						else if ((Math.abs(herfi-i)==1 && Math.abs(reqem-j)==2)||(Math.abs(herfi-i)==2 && Math.abs(reqem-j)==1)) y = "O";
+						else y = "";
+						
+						kod += '<td onclick="klik(\'' + letter[i] + '\',' + j + ',\'' + y + '\')" class="' + x + '">'+ y +'</td>';
+					}
+					kod += "</tr>";
+				}
+				document.getElementById("stol").innerHTML = kod;
+			}
+			
+			function klik(xxx,yyy,zzz) {
+				if (zzz == "O") sahmat(xxx,yyy);
+			}
+		</script>
+	</body>
+
+</html>

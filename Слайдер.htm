@@ -1,0 +1,94 @@
+<html>
+	<head>
+		<title>Слайдер</title>
+		<style>
+			body {background-image: url("png/backpic.jpg"); background-position: center; height: 100vh; display: flex; justify-content: center;  align-items: center;}
+
+			#slider {
+				margin: auto;
+				width: 800px;
+				border: 10px solid teal;
+			}
+			#slide {
+				width: 800px;
+				height:500px;
+				background: center/cover no-repeat;
+			}
+			#rotor {
+				display: flex;
+				width: 800px;
+			}
+			#rotor div {
+				border: 1px solid black;
+				width: 100px;
+				height: 60px;
+				text-align: center;
+				font-size: 2em;
+				background: center/100px no-repeat;
+			}
+			.blue {
+				opacity: 0.5;			
+			}
+			.red {
+				opacity: 1;			
+			}
+			
+			#rotor button {
+				width:50px;
+				font-size: 2em;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="slider">
+			<div id="slide"></div>
+			<div id="rotor"></div>
+		</div>
+		
+		<script>
+			var n = 7;
+			var m = 9;
+			var start = 0;
+			build(start);
+			setInterval(function(){ rotate("r"); }, 3000);
+			
+			function rotate(x) {
+				switch(x) {
+					case "r":
+						 start++;
+					break;
+					case "l":
+						 start--;
+					break;
+				}
+				if(start>m-1) start = 0;
+				if(start<0) start = m-1;
+				
+				build(start);
+			}
+			
+			function build(s) {
+				kod = "";
+				counter = s + 1;
+				kod+= '<button id="left" onclick="rotate(\'l\')">&#129080;</button>';
+				for(i=0; i<n; i++){
+					if(i==Math.floor((n-1)/2)) {
+						y = "red";
+						document.getElementById("slide").style.backgroundImage = "url('slider/"+ counter +".jpg')";
+					}
+					else y = "blue";
+					kod+= '<div class="'+y+'" onclick="photo('+ i +')" style="background-image: url(\'slider/'+ counter +'.jpg\')"></div>';
+					
+					if(counter<m) counter++;
+					else counter = 1;
+				}
+				kod+= '<button id="right" onclick="rotate(\'r\')">&#129082;</button>';
+				document.getElementById("rotor").innerHTML = kod;
+			}
+			function photo(i){
+				start +=  i - Math.floor((n-1)/2) -1 ;
+				rotate("r");
+			}
+		</script>
+	</body>
+</html>

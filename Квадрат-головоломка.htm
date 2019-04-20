@@ -1,0 +1,74 @@
+<html>
+	<head>
+		<title>Квадрат-головоломка</title>
+		<style>
+		body {background-image: url("png/backpic.jpg"); background-position: center; height: 100vh; display: flex; justify-content: center;  align-items: center;}
+
+			table{
+				border-collapse: collapse;
+			}
+			td {
+				border: 1px solid gray;
+				padding: 20px;
+				text-align: center;
+			}
+			button {height: 100px; width: 100px; margin: 10px; font-size:40px;}
+			table {background: #a1ef70;}
+		</style>
+	</head>
+	<body>
+		<table id="tbl"></table>
+		<button onclick="start()">GO!</button>
+		
+		<script>
+			var tablica;
+			var m,n; //координаты пустой ячейки
+		
+			function start() {
+				tablica = [];
+				cisla=[];
+				cisla[0]="";
+				for (c=1; c<=15; c++) {
+					cisla.push(c); //заполняет массив числами от 1 до 16				
+				}
+				for(i=0; i<4; i++){
+					tablica[i]=[];
+					for(j=0; j<4; j++){
+						r = Math.floor(Math.random() * cisla.length);
+						tablica[i][j] = cisla[r];
+						if(tablica[i][j] == "") {
+							m = i;
+							n = j;
+						}
+						cisla.splice(r, 1);						
+					}
+				}
+				kvadrat();
+			}
+		
+			function kvadrat() {
+				kod = "";
+				for(i=0; i<4; i++){
+					kod += "<tr>";
+					for(j=0; j<4; j++){
+						kod += "<td onclick='klik(" + i + "," + j + ")'>" + tablica[i][j] + "</td>";					
+					}
+					kod += "</tr>";
+				}
+				document.getElementById("tbl").innerHTML = kod;
+			}
+			
+			function klik(x,y) {
+				if( (Math.abs(x-m)==1 && y==n) ||
+					(x==m && Math.abs(y-n)==1)	) {
+					tablica[m][n] = tablica[x][y];
+					tablica[x][y] = "";
+					m = x;
+					n = y;
+					kvadrat();
+				}
+					
+			}
+		</script>
+	</body>
+</html>

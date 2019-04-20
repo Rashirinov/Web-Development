@@ -1,0 +1,115 @@
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Теннис</title>
+		<style>
+			body {background-image: url("png/backpic.jpg"); background-position: center; height: 100vh; display: flex; justify-content: center;  align-items: center;}
+			
+			#game {
+				background: darkseagreen;
+				width: 800px;
+				height: 600px;
+				margin: 50px auto;
+				box-shadow: 1px 1px 10px black;
+				position: relative;
+				display: flex;
+				border: 10px solid teal;
+			}
+			#game h1 {
+				font: bold 4em Arial;
+				color: yellow;
+				text-shadow: 0 0 20px white;
+				margin: auto;
+			}
+			#ball {
+				width: 50px;
+				height: 50px;
+				border-radius: 50%;
+				background-image: radial-gradient(closest-side at 30% 30%, white 5%, crimson 85%, crimson 20%);
+				position: absolute;
+			}
+			#bar {
+				width: 200px;
+				height: 10px;
+				background: blue;
+				position: absolute;
+				top: 600px;
+			}
+			#score {
+				min-width: 120px;
+				font: bold 1.4em Arial;
+				color: white;
+			}
+			#ps {
+				width:220px;
+				font-size: 60px;
+				margin: auto;
+			]
+		</style>
+	</head>
+	<body>
+		<button id="ps" onclick="playstop()">GO!</button>
+		<span id="score">Score : 0</span>
+		<div id="game">
+			<div id="ball"></div>
+			<div id="bar"></div>
+		</div>
+		<script>
+			var x = 1;
+			var y = 1;
+			var dx = 5;
+			var dy = 5;
+			var by = 0;
+			var score = 0;
+			var flag = 0;
+			document.onkeydown = checkKey;
+			
+			function playstop() {
+				flag = Math.abs(flag -1);
+				if (flag == 1) {
+					davay = setInterval(kamala, 40);
+					buttext = "PAUSE";
+				} else {
+					clearInterval(davay);
+					buttext = "PLAY";
+				}
+				document.getElementById("ps").innerHTML = buttext;
+			}
+			
+			function checkKey(e) {
+				e = e || window.event;
+				if (e.keyCode == '37') {
+					if(by > 0) by -= 10;
+				}
+				else if (e.keyCode == '39') {
+					if(by < 600) by += 10;
+				}
+				document.getElementById("bar").style.left = by + "px";
+			}
+			
+			function kamala() {
+				if(x >= 750 || x <= 0) dx *= -1;
+				if(y <= 0) dy *= -1;
+				if(y >= 550) {
+					if (x>by-25 && x<by+175) {
+						dx *= 1.1;
+						dy *= -1.1;
+						score++;
+						document.getElementById("score").innerHTML = "Score : " + score;
+					} else gameover();
+				}
+				
+				x += dx;
+				y += dy;
+				document.getElementById("ball").style.left = x + "px";
+				document.getElementById("ball").style.top = y + "px";
+			}
+			
+			function gameover() {
+				document.getElementById("game").innerHTML = "<h1>GAME OVER</h1>";
+				document.getElementById("game").style.backgroundColor = "black";
+				document.getElementById("score").style.visibility = hidden;
+			}
+		</script>
+	</body>
+</html>

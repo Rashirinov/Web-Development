@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Гадальщик</title>
+		<style>
+			body {background-image: url("png/backpic.jpg"); background-position: center; height: 100vh; display: flex; justify-content: center;  align-items: center;}
+			section {
+				height: 170px;
+				width: 400px;
+				background: #6aed8a;
+				border: 1px solid silver;
+				border-radius: 20px;
+				box-shadow: 1px 1px 10px black;
+				padding: 30px;
+				margin: 100px auto;
+				text-align: center;
+			}
+			input, button { 
+				width: 40px; 
+				padding: 10px;
+				border: 1px solid silver;
+				border-radius: 5px;
+				outline: none;
+			}
+			h2, p {text-align: center; }
+		</style>
+	</head>
+	<body>
+		<section>
+			<h2>Угадай число от 1 до <span id="maksimum"></span>!</h2>
+			<input id="n" type="number" min="1" autofocus="autofocus" />
+			<button onclick="check()">GO!</button>
+			<p id="message"></p>
+		</section>
+		
+		<script>
+			var popitka = 0;
+			var max = 100;
+			var x = Math.floor(Math.random()*max + 1);
+			document.getElementById("n").max = max;
+			document.getElementById("maksimum").innerHTML = max;
+			
+			function check() {
+				popitka++;
+				n = Number(document.getElementById("n").value);
+				if (n == x) {
+					text = "Угадано с " + popitka + " попыток!";
+				} else if (n > x) {
+					text = "Меньше!";
+				} else {
+					text = "Больше!";
+				}
+				document.getElementById("n").value = "";
+				document.getElementById("n").focus();
+				document.getElementById("message").innerHTML = text;
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,61 @@
+<html>
+	<head>
+		<title>Поймай флаг</title>
+		<style>
+		body {background-image: url("png/backpic.jpg"); background-position: center; height: 100vh; display: flex; justify-content: center;  align-items: center;}
+		
+		#kvadrat {
+			width: 800px;
+			height: 400px;
+			border:1px solid black;
+			margin:6% auto;	
+			position:relative;
+			background: #8de88f;
+			border:10px solid green;
+
+		}
+		#daire{
+			width: 100px;
+			height: 100px;
+			background: url('png/0.png') center/contain no-repeat;
+			position: absolute;
+		}
+		#scetcik {
+			width: 100px;
+			height: 100px;
+			background: black;
+			color: yellow;
+			font-size:90px;
+			text-align: center;
+			border:5px solid grey;
+			margin:auto;	
+		}
+		</style>
+	</head>
+	<body>
+	<p id="scetcik">0</p>
+	<div id="kvadrat">
+		<div id="daire" onclick="klik()"></div>
+	</div>
+		<script>
+			var obj = document.getElementById("daire").style;
+			var count=1;
+			bbb();
+			function bbb() {
+				obj.display = "block";
+				obj.top = rand(0,300) + "px";
+				obj.left = rand(0,700) + "px";
+				obj.backgroundImage = "url('png/" + rand(0,8) + ".png')";
+			}
+			function rand(m,n) {
+				return Math.floor(Math.random()* n) + m;
+			}
+			function klik() {
+				obj.display = "none";
+				setTimeout(bbb,1000);
+				scetcik.innerHTML = count++;
+			}
+		
+		</script>
+	</body>
+</html>

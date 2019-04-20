@@ -1,0 +1,49 @@
+<html>
+	<head>
+		<title>Бегущая строка</title>
+		<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+		<style>
+		body {background-image: url("png/backpic.jpg"); background-position: center; height: 100vh; display: flex; justify-content: center; align-items: center;}
+		#kvadrat {
+			margin: auto;
+		}
+		#kvadrat div {
+			width:100px;
+			height:100px;
+			background:black;
+			color: yellow;
+			text-align: center;
+			padding-top: 30px;
+			font: bold 60px 'Orbitron', sans-serif;
+			float: left;
+			margin: 2px;
+		}
+		</style>
+	</head>
+	<body>
+	<div id="kvadrat"></div>
+		<script>
+			var soz="След.остановка: Святоплуково";
+			var n=10;
+			var x=[];
+			var pos = n;
+			setInterval(qwe,500);
+			
+			function qwe(){
+				if(pos <= -1*soz.length) pos=n; 
+				else pos--;
+				
+				for(i=0;i<n;i++){
+					if(i < pos || i-pos >= soz.length) x[i]="";
+					else x[i] = soz[i-pos];
+				}
+
+				a="";
+				for(i=0;i<n;i++){
+					a+="<div>"+x[i]+ "</div>";
+				}
+				document.getElementById("kvadrat").innerHTML=a;
+			}
+		</script>
+	</body>
+</html>
