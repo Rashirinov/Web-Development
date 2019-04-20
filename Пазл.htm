@@ -1,0 +1,131 @@
+<html>
+	<head>
+		<title>Пазл</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<style>
+			body {background: DarkSeaGreen; margin: 0}
+			#puzzle {width: 800px; height: 600px; background: BlanchedAlmond; position: relative; box-shadow: 0 0 20px rgba(0,0,0,0.8);}
+			.p {
+				width: 100px; 
+				height: 100px; 
+				position: absolute;
+				background-image: url('slider/puzzle.jpg');
+				box-sizing: border-box;
+				border: 1px solid white;
+			}
+			.click{
+				pointer-events: none; 
+			}
+			h1{
+				margin: auto;
+				font: bold 5em Arial;
+				color: #fff;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<div id="puzzle"></div>
+	
+		<script>
+			$(document).ready(function(){
+				var n = 6;
+				var m = 8;
+				var w = $(window).width();
+				var mouseX, mouseY;
+				var grid = [];
+				var leftc, topc, rott;
+				var l, t, pos;
+				var flag = 0;
+				
+				$(document).mousemove(function(event){
+					mouseX = event.pageX;
+					mouseY = event.pageY;
+					if (mouseX > 0 && mouseX < 100*m &&
+						mouseY > 0 && mouseY < 100*n) {
+						leftc = Math.floor(mouseX/100)*100;
+						topc = Math.floor(mouseY/100)*100;						
+					} else if (mouseX < 0 || mouseX > 100*m || mouseY < 0 || mouseY > 100*n){
+						leftc = Math.floor(Math.random() * (w - 120 - 100*m)) + 100*m;
+						topc = Math.floor(Math.random() * (100*n - 100));
+					}
+				});
+				
+				for(i=0; i<n; i++) {
+					grid[i] = [];
+					for(j=0; j<m; j++) {
+						grid[i][j] = 0;
+						id = i + '-' + j;
+						tale = '<div id="'+ id +'" class="p"></div>';
+						leftc = Math.floor(Math.random() * (w - 120 - 100*m)) + 100*m;
+						topc = Math.floor(Math.random() * (100*n - 100));
+						rott = Math.floor(Math.random() * 20) - 10;
+						$("#puzzle").append(tale);
+						$('#' + id).css({
+							"left": leftc + "px",
+							"top": topc + "px",
+							"background-position":  (-100*j) + "px " + (-100*i) + "px",
+							"transform": "rotate(" + rott + "deg)",
+							"z-index": 999
+						});
+					}
+				}
+				
+				$(".p").draggable();
+				
+				$(".p").mousedown(function(){
+					$(this).css({
+						"transform": "rotate(0deg)"
+					});
+					if (grid[topc/100][leftc/100] == 2) grid[topc/100][leftc/100] = 0;
+				});
+				
+				$(".p").mouseup(function(){
+					l = leftc/100;
+					t = topc/100;
+					pos = t + "-" + l;
+					if(mouseX > 0 && mouseX < 100*m && mouseY > 0 && mouseY < 100*n ){  //&& grid[topc/100][leftc/100] == 0 || grid[topc/100][leftc/100] == 2
+						if(grid[topc/100][leftc/100]==2 || grid[topc/100][leftc/100]==1) {
+							leftc = Math.floor(Math.random() * (w - 120 - 100*m)) + 100*m;
+							topc = Math.floor(Math.random() * (100*n - 100));
+						} else if(pos==$(this).attr("id")) {
+							grid[topc/100][leftc/100] = 1;
+							$(this).addClass("click");
+							flag++;
+							if(flag==48){
+								$("#puzzle").html("<h1>YOU WIN!</h1>");
+								$("#puzzle").css({
+									"width":"100%",
+									"height":"100%",
+									"background":"orange",
+									"display":"flex"
+								})
+							}
+						} else grid[topc/100][leftc/100]=2;
+					} /* else{
+						leftc = Math.floor(Math.random() * (w - 120 - 100*m)) + 100*m;
+						topc = Math.floor(Math.random() * (100*n - 100));
+					} */
+					
+					/*else {
+						$("#puzzle").html()
+					}*/
+					$(this).css({
+						"left": leftc + "px",
+						"top": topc + "px",
+						"z-index": 1
+					});
+					
+				});
+			});
+		</script>
+	</body>
+</html>
+
+
+
+
+
+
+
