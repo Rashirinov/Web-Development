@@ -1,0 +1,100 @@
+header {
+	height: 100vh;
+	background: url("img/hero-bg.jpg") no-repeat center/cover;
+}
+.navbar {
+	font: normal 15px "Nunito";
+}
+header p {
+	font: normal 15px "Nunito";
+}
+#about {
+	background: #fff;
+	padding: 120px 0 0 0;
+}
+.btn-primary {
+	margin-right: 30px;
+}
+h2 {
+	font: bold 28px "Nunito";
+}
+h3 {
+	font-family: "Nunito";
+	font-size: 16px;
+	margin-top: 5px;
+}
+#about hr {
+	color: #a5c5fa;
+	width: 50px;
+}
+p {
+	font-family: "Nunito";
+}
+#portfolio {
+	background: #fff;
+	padding: 120px 0;
+}
+#con {
+	max-width: 170px;
+}
+#testimonials {
+	background-image: url("img/testiomonial-bg.jpg");
+	background-size: cover;
+	background-position: center;
+	padding: 120px 0;
+}
+#testimonials p {
+	max-width: 350px;
+	display: block;
+	margin: auto;
+}
+#services {
+	background: #fff;
+	padding: 120px 0 0 0;
+}
+#services i {
+	font-size: 30px;
+	color: #777;
+}
+#team {
+	background: #fff;
+	padding: 120px 0;
+}
+#team img {
+	max-width: 263px;
+	height: 300px;
+	display: block;
+	margin: auto;
+}
+#video {
+	padding: 120px 0;
+	background: #333;
+}
+#video p {
+	display: block;
+	margin: auto;
+	max-width: 350px;
+}
+#news {
+	background: #fff;
+	padding: 120px 0 0 0;
+}
+h4 {
+	font-family: "Nunito";
+	font-size: 20px;
+}
+time {
+	font-family: "Open Sans", sans-serif;
+	font-size: 12px;
+}
+#contact {
+	background: #fff;
+	padding: 120px 0 80px;
+}
+input {
+	margin-bottom: 20px;
+}
+#sendm {
+	display:block;
+	margin: auto;
+}

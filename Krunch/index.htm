@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Bootstrap</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous" />
+		<link rel="stylesheet" href="style.css" />
+		<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+		<link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+	</head>
+	<body>
+		<header>
+			<div class="container">
+				<nav class="navbar navbar-expand-md navbar-dark">
+					<a class="navbar-brand" href="#"><img src="img/logo.png" alt="logo"></a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="collapsibleNavbar">
+						<ul class="navbar-nav ml-auto">
+							<li class="nav-item"><a class="nav-link text-light" href="#">Home</a></li>
+							<li class="nav-item"><a class="nav-link text-light" href="#about">About</a></li>
+							<li class="nav-item"><a class="nav-link text-light" href="#portfolio">Works</a></li>
+							<li class="nav-item"><a class="nav-link text-light" href="#testimonials">Testimonial</a></li>
+							<li class="nav-item"><a class="nav-link text-light" href="#services">Services</a></li>
+							<li class="nav-item"><a class="nav-link text-light" href="#team">Team</a></li>
+							<li class="nav-item"><a class="nav-link text-light" href="#news">Blog</a></li>
+							<li class="nav-item"><a class="nav-link text-light" href="#contact">Contact</a></li>
+						</ul>
+					</div>
+				</nav>
+				<div class="d-flex align-items-center" style="height:90vh;">
+					<div class="jumbotron bg-transparent text-light text-center">
+						<h1 class="display-4 text-uppercase">Clean and Flexible Template</h1>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac tortor vitae neque viverra luctus. Ut consequat eros ut fermentum mattis. Suspendisse id justo id nunc dignissim laoreet.</p>
+						<a class="btn btn-primary btn-lg text-uppercase" href="#" role="button">Download now</a>
+						<a class="btn btn-outline-primary btn-lg text-light text-uppercase" href="#" role="button">View features</a>
+					</div>
+				</div>
+			</div>
+		</header>
+		<section id="about">
+			<div class="container">
+				<h2 class="text-center text-dark text-uppercase">About us</h2>
+				<p class="font-italic text-center text-dark">Donec eu lacus sed mi consequat volutpat quis vitae metus<p>
+				<div class="mt-5 row">
+					<div class="col">
+						<p class="text-dark">Quisque tincidunt fermentum auctor. Maecenas a venenatis ligula. In commodo est non odio condimentum lacinia. Curabitur ornare mattis magna, vitae tempus ex ornare ut. Sed ac porta elit. Vivamus risus nisi, tincidunt ornare auctor vel, elementum et ante. Proin laoreet dictum massa, nec tincidunt ante aliquet sit amet. Cras in sagittis velit, venenatis mattis ante.</p>
+						<p class="text-dark">Cras sapien felis, auctor dapibus porta iaculis, varius a nibh. Mauris non nisi eu quam placerat aliquet ac in nisl. Morbi cursus tellus sed aliquam aliquet. In ullamcorper massa sed nisl consectetur euismod.</p>
+					</div>
+					<div class="col">
+						<img class="img-fluid" src="img/about.jpg" alt="aboutimg" />
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="portfolio">
+			<div class="container">
+				<h2 class="text-center text-dark text-uppercase">Portfolio</h2>
+				<p class="font-italic text-center text-dark">An eye for detail makes our works beautiful.</p>
+				<ul class="nav justify-content-center">
+			    <li class="nav-item">
+			      <a class="nav-link" href="#">All</a>
+			    </li>
+			    <li class="nav-item">
+			      <a class="nav-link" href="#">Brand</a>
+			    </li>
+			    <li class="nav-item">
+			      <a class="nav-link" href="#">Design</a>
+			    </li>
+			    <li class="nav-item">
+			      <a class="nav-link" href="#">Motion</a>
+			    </li>
+				<li class="nav-item">
+			      <a class="nav-link" href="#">Printing</a>
+			    </li>
+			 </ul>
+			</div>
+			<div class="container">
+				<div class="mt-5 row">
+					<div class="col-3"><img class="img-fluid" src="img/1.jpg" alt="galitem" /></div>
+					<div class="col-3"><img class="img-fluid" src="img/2.jpg" alt="galitem" /></div>
+					<div class="col-3"><img class="img-fluid" src="img/3.jpg" alt="galitem" /></div>
+					<div class="col-3"><img class="img-fluid" src="img/4.jpg" alt="galitem" /></div>
+				</div>
+				<div class="row">
+					<div class="col-3"><img class="img-fluid" src="img/5.jpg" alt="galitem" /></div>
+					<div class="col-3"><img class="img-fluid" src="img/6.jpg" alt="galitem" /></div>
+					<div class="col-3"><img class="img-fluid" src="img/7.jpg" alt="galitem" /></div>
+					<div class="col-3"><img class="img-fluid" src="img/8.jpg" alt="galitem" /></div>
+				</div>
+			</div>
+			<h2 class="mt-3 font-italic text-center text-dark">Have any Porjects?</h3>
+			<a id="con" class="mx-auto d-block btn btn-outline-primary text-uppercase text-dark text-center" href="#">Contact now</a>
+		</section>
+		<section id="testimonials" class="carousel slide" data-ride="carousel">
+			<ul class="carousel-indicators">
+				<li data-target="#demo" data-slide-to="0" class="active"></li>
+				<li data-target="#demo" data-slide-to="1"></li>
+				<li data-target="#demo" data-slide-to="2"></li>
+			</ul>
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<h2 class=" text-center text-uppercase text-light font-weight-bold">Testimonials</h2>
+					<p class="text-center text-light">Etiam suscipit, ipsum id malesuada gravida, metus ligula fringilla tellus, id efficitur nibh purus ut nisi. Vivamus gravida quam vel dolor ultricies imperdiet. Mauris nunc ligula, porta sit amet elementum nec, tempor ut dolor.</p>
+					<p class="text-center text-primary font-weight-bold text-uppercase">Howard K. Stern</p>
+				</div>
+				<div class="carousel-item">
+					<h2 class=" text-center text-uppercase text-light font-weight-bold">Testimonials</h2>
+					<p class="text-center text-light">Phasellus porttitor ultrices massa, at suscipit mauris lobortis sed. Nulla id tortor at mauris tincidunt feugiat. Morbi et nulla pulvinar, luctus tellus eget, fringilla turpis. Suspendisse dictum sed libero quis sollicitudin.</p>
+					<p class="text-center text-primary font-weight-bold text-uppercase">Soward K. Htern</p>
+				</div>
+				<div class="carousel-item">
+					<h2 class=" text-center text-uppercase text-light font-weight-bold">Testimonials</h2>
+					<p class="text-center text-light">Curabitur accumsan accumsan nibh fringilla iaculis. Suspendisse potenti. Nullam scelerisque at felis id consectetur. Ut eget massa purus. Pellentesque pretium porta efficitur. Aliquam vitae suscipit dolor, sit amet imperdiet turpis. Mauris non eleifend mi. Etiam maximus justo in ipsum interdum, id porttitor nisi molestie.</p>
+					<p class="text-center text-primary font-weight-bold text-uppercase">Koward H. Stern</p>
+				</div>
+			</div>
+			<a class="carousel-control-prev" href="#demo" data-slide="prev">
+				<span class="carousel-control-prev-icon"></span>
+			</a>
+			<a class="carousel-control-next" href="#demo" data-slide="next">
+				<span class="carousel-control-next-icon"></span>
+			</a>
+		</section>
+		<section id="services">
+			<h2 class="text-uppercase font-weight-bold text-center text-dark">Services</h2>
+			<p class="font-italic text-center text-dark">An eye for detail makes our works beautiful.</p>
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<i class="fas fa-tv"></i>
+						<h3 class="font-weight-bold text-dark text-uppercase">Web Design</h3>
+						<p class="text-dark mt-1">Lorem ipsum dolor sit amet,
+							adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et aliqua.
+							Ut enim ad minim veniam, quis nostrud
+							exercitation ullamco laboris nisi ut aliquip.</p>
+					</div>
+					<div class="col">
+						<i class="fas fa-code"></i>
+						<h3 class="font-weight-bold text-dark text-uppercase">Web Development</h3>
+						<p class="text-dark mt-1">Lorem ipsum dolor sit amet,
+							adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et aliqua.
+							Ut enim ad minim veniam, quis nostrud
+							exercitation ullamco laboris nisi ut aliquip.</p>
+					</div>
+					<div class="col">
+						<i class="fas fa-mobile-alt"></i>
+						<h3 class="font-weight-bold text-dark text-uppercase">Apps Design</h3>
+						<p class="text-dark mt-1">Lorem ipsum dolor sit amet,
+							adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et aliqua.
+							Ut enim ad minim veniam, quis nostrud
+							exercitation ullamco laboris nisi ut aliquip.</p>
+					</div>
+				</div>
+				<div class="row mt-3">
+					<div class="col">
+						<i class="fas fa-camera-retro"></i>
+						<h3 class="font-weight-bold text-dark text-uppercase">Photography</h3>
+						<p class="text-dark mt-1">Lorem ipsum dolor sit amet,
+							adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et aliqua.
+							Ut enim ad minim veniam, quis nostrud
+							exercitation ullamco laboris nisi ut aliquip.</p>
+					</div>
+					<div class="col">
+						<i class="fab fa-tripadvisor"></i>
+						<h3 class="font-weight-bold text-dark text-uppercase">Branding</h3>
+						<p class="text-dark mt-1">Lorem ipsum dolor sit amet,
+							adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et aliqua.
+							Ut enim ad minim veniam, quis nostrud
+							exercitation ullamco laboris nisi ut aliquip.</p>
+					</div>
+					<div class="col">
+						<i class="fab fa-mixcloud"></i>
+						<h3 class="font-weight-bold text-dark text-uppercase">Hosting</h3>
+						<p class="text-dark mt-1">Lorem ipsum dolor sit amet,
+							adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et aliqua.
+							Ut enim ad minim veniam, quis nostrud
+							exercitation ullamco laboris nisi ut aliquip.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="team">
+			<h2 class="text-center text-dark text-uppercase">Awesome Team</h2>
+			<p class="font-italic text-dark text-center">An eye for detail makes our works beautiful.</p>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4">
+						<img class="img-fluid" src="img/team-2.jpg" alt="team" />
+						<h3 class="text-center text-dark font-wight-bold text-uppercase"><b>LAURENCE BENSON</b></h3>
+						<p class="text-center text-dark font-weight-light">Programmer</p>
+					</div>
+					<div class="col-md-4">
+						<img class="img-fluid" src="img/team-3.jpg" alt="team" />
+						<h3 class="text-center text-dark font-wight-bold text-uppercase"><b>ROBERT FIELDS</b></h3>
+						<p class="text-center text-dark font-weight-light">Designer</p>
+					</div>
+					<div class="col-md-4">
+						<img class="img-fluid" src="img/team-4.jpg" alt="team" />
+						<h3 class="text-center text-dark font-wight-bold text-uppercase"><b>ADAM HINES</b></h3>
+						<p class="text-center text-dark font-weight-light">Designer</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="video" class="carousel slide" data-ride="carousel">
+			<ul class="carousel-indicators">
+				<li data-target="#demo" data-slide-to="0" class="active"></li>
+				<li data-target="#demo" data-slide-to="1"></li>
+				<li data-target="#demo" data-slide-to="2"></li>
+			</ul>
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<h2 class=" text-center text-uppercase text-light font-weight-bold">Testimonials</h2>
+					<p class="text-center text-light">Etiam suscipit, ipsum id malesuada gravida, metus ligula fringilla tellus, id efficitur nibh purus ut nisi. Vivamus gravida quam vel dolor ultricies imperdiet. Mauris nunc ligula, porta sit amet elementum nec, tempor ut dolor.</p>
+					<p class="text-center text-primary font-weight-bold text-uppercase">Howard K. Stern</p>
+				</div>
+				<div class="carousel-item">
+					<h2 class=" text-center text-uppercase text-light font-weight-bold">Testimonials</h2>
+					<p class="text-center text-light">Phasellus porttitor ultrices massa, at suscipit mauris lobortis sed. Nulla id tortor at mauris tincidunt feugiat. Morbi et nulla pulvinar, luctus tellus eget, fringilla turpis. Suspendisse dictum sed libero quis sollicitudin.</p>
+					<p class="text-center text-primary font-weight-bold text-uppercase">Soward K. Htern</p>
+				</div>
+				<div class="carousel-item">
+					<h2 class=" text-center text-uppercase text-light font-weight-bold">Testimonials</h2>
+					<p class="text-center text-light">Curabitur accumsan accumsan nibh fringilla iaculis. Suspendisse potenti. Nullam scelerisque at felis id consectetur. Ut eget massa purus. Pellentesque pretium porta efficitur. Aliquam vitae suscipit dolor, sit amet imperdiet turpis. Mauris non eleifend mi. Etiam maximus justo in ipsum interdum, id porttitor nisi molestie.</p>
+					<p class="text-center text-primary font-weight-bold text-uppercase">Koward H. Stern</p>
+				</div>
+			</div>
+			<a class="carousel-control-prev" href="#demo" data-slide="prev">
+				<span class="carousel-control-prev-icon"></span>
+			</a>
+			<a class="carousel-control-next" href="#demo" data-slide="next">
+				<span class="carousel-control-next-icon"></span>
+			</a>
+		</section>
+		<section id="news">
+			<h2 class="text-center text-dark text-uppercase">Latest News</h2>
+			<p class="text-center text-dark font-italic">An eye for detail makes our works beautiful.</p>
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="card">
+							<div class="card-header"><img class="img-fluid" src="img/blog-1.jpg" alt="news" /></div>
+							<div class="card-body">
+								<h4 class="text-dark font-weight-bold">Eiusmod tempor labore aliqua</h4>
+								<time class="text-dark font-weight-light">18 August 2016</time>
+								<p class="text-dark">Lorem ipsum dolor sit amet, adipisicing elit,
+									sed labore et dolore magna aliqua. Ut enim ad minim </p>
+							</div>
+							<div class="card-footer"> <a href="#" class="btn btn-outline-info" role="button">Read More >></a></div>
+						</div>
+					</div>
+					<div class="col">
+						<div class="card">
+							<div class="card-header"><img class="img-fluid" src="img/blog-2.jpg" alt="news" /></div>
+							<div class="card-body">
+								<h4 class="text-dark font-weight-bold">Eiusmod tempor labore aliqua</h4>
+								<time class="text-dark font-weight-light">18 August 2016</time>
+								<p class="text-dark">Lorem ipsum dolor sit amet, adipisicing elit,
+									sed labore et dolore magna aliqua. Ut enim ad minim </p>
+							</div>
+							<div class="card-footer"> <a href="#" class="btn btn-outline-info" role="button">Read More >></a></div>
+						</div>
+					</div>
+					<div class="col">
+						<div class="card">
+							<div class="card-header"><img class="img-fluid" src="img/blog-3.jpg" alt="news" /></div>
+							<div class="card-body">
+								<h4 class="text-dark font-weight-bold">Eiusmod tempor labore aliqua</h4>
+								<time class="text-dark font-weight-light">18 August 2016</time>
+								<p class="text-dark">Lorem ipsum dolor sit amet, adipisicing elit,
+									sed labore et dolore magna aliqua. Ut enim ad minim </p>
+							</div>
+							<div class="card-footer"> <a href="#" class="btn btn-outline-info" role="button">Read More >></a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="contact">
+			<h2 class="text-center text-dark text-uppercase">KEEP IN TOUCH</h2>
+			<p class="text-center text-dark font-italic">An eye for detail makes our works beautiful.</p>
+			<div class="container">
+				<form action="/action_page.php" class="mb-5">
+				    <input type="text" class="form-control" placeholder="Name" name="name">
+						<input type="text" class="form-control" placeholder="Last Name" name="Lastname">
+						<div class="form-group">
+							<input type="email" class="form-control" id="email" placeholder="Email Address" name="email">
+	 					</div>
+	 					<div class="form-group">
+		 					<textarea type="text" class="form-control" placeholder="Message" name="message" rows="5"></textarea>
+	 					</div>
+				</form>
+				<button type="button" class="btn btn-primary" id="sendm">Send Message</button>
+			</div>
+		</section>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+	</body>
+</html>
